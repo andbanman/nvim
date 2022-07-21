@@ -13,6 +13,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'rstacruz/vim-closer'
   use 'andymass/vim-matchup'
+  use 'EdenEast/nightfox.nvim'
 
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'release'} -- reqs: node, yarn

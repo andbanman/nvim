@@ -7,3 +7,4 @@ Lua only, requires neovim 0.5 or later
 |-|-|
 | neoclide/coc.nvim | node >= 12.10|
 | kyazdani42/nvim-tree.lua | A modern font with emojis |
+| EdenEast/nightfox.nvim | Terminal with true colors |
