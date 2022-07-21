@@ -1,3 +1,17 @@
 #!/bin/bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# version comaparison, allows leading v|V character
+verlte() {
+	printf '%s\n%s' "${1#[Vv]}" "${2#[Vv]}" | sort -C -V
+}
+
+if ! which node &>/dev/null || verlte $(node --version) 12.10.0; then
+	echo "ERR: node version 12.10 or later not installed. Some plugins will not work."
+	echo"       Visit https://nodejs.org/en/download/"
+	exit 1
+fi
+
+if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+		~/.local/share/nvim/site/pack/packer/start/packer.nvim
+fi
