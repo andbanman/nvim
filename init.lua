@@ -5,12 +5,14 @@ vim.cmd("colorscheme nightfox")
 -- Git --
 vim.cmd([[
   function! TreeIfGitRepo()
-    if isdirectory('./.git')
-      NvimTreeOpen
+    if isdirectory('.git')
+      if expand('%:h') != '.git'
+        NvimTreeOpen
+      end
     end
   endfunction
   augroup git_repository
     autocmd!
-    autocmd BufEnter * call TreeIfGitRepo()
+    autocmd VimEnter * call TreeIfGitRepo()
   augroup end
 ]])
