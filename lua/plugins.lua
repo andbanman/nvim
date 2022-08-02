@@ -14,6 +14,10 @@ return require('packer').startup(function()
   use 'rstacruz/vim-closer'
   use 'andymass/vim-matchup'
   use 'EdenEast/nightfox.nvim'
+  use 'airblade/vim-gitgutter'
+  use 'preservim/tagbar'
+  use 'wincent/command-t'
+  use 'nvim-lualine/lualine.nvim'
 
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'release'} -- reqs: node, yarn

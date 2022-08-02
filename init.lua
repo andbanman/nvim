@@ -1,25 +1,31 @@
 require('plugins')
 require("nvim-tree").setup()
-vim.cmd("colorscheme nightfox")
+require('lualine').setup()
 
--- Bash --
-vim.cmd("set shellcmdflag=-ic")
+vim.cmd("colorscheme terafox")
+vim.opt.number = true
+vim.opt.mouse = "a"
+
+-- Add aliases to external command shell
+-- vim.env.BASH_ENV = "/home/abanman/.bash_aliases" -- not working
 
 -- NVim-Tree --
-vim.api.nvim_set_keymap('n', 'tt', ':NvimTreeToggle<CR>', {})
-vim.api.nvim_set_keymap('n', 'tr', ':NvimTreeRefresh<CR>', {})
-
--- Git --
+vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<CR>', {})
 vim.cmd([[
-  function! TreeIfGitRepo()
-    if isdirectory('.git')
-      if expand('%:h') != '.git'
-        NvimTreeOpen
-      end
+  function! NvimTreeIfNotGit()
+    if &ft !~ 'git.*'
+      lua require"nvim-tree".toggle(false, false)
     end
   endfunction
-  augroup git_repository
+  augroup ag_nvim_tree
     autocmd!
-    autocmd VimEnter * call TreeIfGitRepo()
+    autocmd VimEnter * call NvimTreeIfNotGit()
+    autocmd BufWritePost * NvimTreeRefresh
   augroup end
+]])
+
+-- Highlight trailing whitespace
+vim.cmd([[
+  highlight RedundantSpaces ctermbg=red guibg=red
+  match RedundantSpaces /\s\+$/
 ]])
