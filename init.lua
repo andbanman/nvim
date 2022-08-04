@@ -6,6 +6,13 @@ vim.cmd("colorscheme terafox")
 vim.opt.number = true
 vim.opt.mouse = "a"
 
+-- default tab options
+local indentlen = 2
+vim.opt.expandtab = true
+vim.opt.tabstop = indentlen
+vim.opt.softtabstop = indentlen
+vim.opt.shiftwidth = indentlen
+
 -- Add aliases to external command shell
 -- vim.env.BASH_ENV = "/home/abanman/.bash_aliases" -- not working
 
@@ -14,7 +21,7 @@ vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<
 vim.cmd([[
   function! NvimTreeIfNotGit()
     if &ft !~ 'git.*'
-      lua require"nvim-tree".toggle(false, false)
+      lua require"nvim-tree".toggle(false, true)
     end
   endfunction
   augroup ag_nvim_tree
