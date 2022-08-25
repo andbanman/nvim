@@ -18,6 +18,9 @@ return require('packer').startup(function()
   use 'preservim/tagbar'
   use 'wincent/command-t'
   use 'nvim-lualine/lualine.nvim'
+  use 'hashivim/vim-terraform'
+  use 'junegunn/fzf'
+  use 'junegunn/fzf.vim'
 
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'release'} -- reqs: node, yarn

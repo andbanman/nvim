@@ -16,6 +16,12 @@ if ! which node &>/dev/null || verlte $(node --version) 12.10.0; then
 	exit 1
 fi
 
+if ! which bat &>/dev/null; then
+	echo "WARN: bat is needed for the full experience in fzf."
+	echo"       Visit https://github.com/sharkdp/bat"
+	exit 1
+fi
+
 if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
