@@ -18,7 +18,7 @@ fi
 
 if ! which bat &>/dev/null; then
 	echo "WARN: bat is needed for the full experience in fzf."
-	echo"       Visit https://github.com/sharkdp/bat"
+	echo "      Visit https://github.com/sharkdp/bat"
 	exit 1
 fi
 
