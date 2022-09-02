@@ -19,7 +19,7 @@ vim.opt.shiftwidth = indentlen
 -- vim.env.BASH_ENV = "/home/abanman/.bash_aliases" -- not working
 
 -- NVim-Tree --
--- vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<CR>', {})
+vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<CR>', {})
 -- vim.cmd([[
 --   function! NvimTreeIfNotGit()
 --     if &ft !~ 'git.*'
