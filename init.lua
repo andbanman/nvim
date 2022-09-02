@@ -19,19 +19,19 @@ vim.opt.shiftwidth = indentlen
 -- vim.env.BASH_ENV = "/home/abanman/.bash_aliases" -- not working
 
 -- NVim-Tree --
-vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<CR>', {})
-vim.cmd([[
-  function! NvimTreeIfNotGit()
-    if &ft !~ 'git.*'
-      lua require"nvim-tree".toggle(false, true)
-    end
-  endfunction
-  augroup ag_nvim_tree
-    autocmd!
-    autocmd VimEnter * call NvimTreeIfNotGit()
-    autocmd BufWritePost * NvimTreeRefresh
-  augroup end
-]])
+-- vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<CR>', {})
+-- vim.cmd([[
+--   function! NvimTreeIfNotGit()
+--     if &ft !~ 'git.*'
+--       lua require"nvim-tree".toggle(false, true)
+--     end
+--   endfunction
+--   augroup ag_nvim_tree
+--     autocmd!
+--     autocmd VimEnter * call NvimTreeIfNotGit()
+--     autocmd BufWritePost * NvimTreeRefresh
+--   augroup end
+-- ]])
 
 -- Highlight trailing whitespace
 vim.cmd([[
