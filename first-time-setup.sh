@@ -12,7 +12,7 @@ fi
 
 if ! which node &>/dev/null || verlte $(node --version) 12.10.0; then
 	echo "ERR: node version 12.10 or later not installed. Some plugins will not work."
-	echo"       Visit https://nodejs.org/en/download/"
+	echo "       Visit https://nodejs.org/en/download/"
 	exit 1
 fi
 
@@ -23,6 +23,6 @@ if ! which bat &>/dev/null; then
 fi
 
 if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
