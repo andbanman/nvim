@@ -5,9 +5,6 @@ require('lualine').setup()
 vim.cmd("colorscheme terafox")
 vim.opt.number = true
 
--- enable mouse for window navigation and opening up visual mode on text
-vim.opt.mouse = "n"
-
 -- default tab options
 local indentlen = 2
 vim.opt.expandtab = true
