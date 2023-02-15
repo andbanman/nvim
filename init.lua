@@ -15,8 +15,13 @@ vim.opt.shiftwidth = indentlen
 -- Add aliases to external command shell
 -- vim.env.BASH_ENV = "/home/abanman/.bash_aliases" -- not working
 
+-- Map fzf Files search command to CTRL-p --
+vim.api.nvim_set_keymap('n', '<C-p>', ':Files<CR>', {})
+
 -- NVim-Tree --
 vim.api.nvim_set_keymap('n', 'tt', ':lua require"nvim-tree".toggle(false, true)<CR>', {})
+vim.api.nvim_set_keymap('n', 'tf', ':NvimTreeFindFile<CR>', {})
+
 -- vim.cmd([[
 --   function! NvimTreeIfNotGit()
 --     if &ft !~ 'git.*'
