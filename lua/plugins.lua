@@ -16,11 +16,11 @@ return require('packer').startup(function()
   use 'EdenEast/nightfox.nvim'
   use 'airblade/vim-gitgutter'
   use 'preservim/tagbar'
-  use 'wincent/command-t'
   use 'nvim-lualine/lualine.nvim'
   use 'hashivim/vim-terraform'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
+  use 'hkupty/iron.nvim'
 
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'release'} -- reqs: node, yarn
