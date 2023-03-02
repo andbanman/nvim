@@ -20,7 +20,12 @@ return require('packer').startup(function()
   use 'hashivim/vim-terraform'
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
-  use 'hkupty/iron.nvim'
+
+  -- REPL
+  use 'jpalardy/vim-slime'
+  vim.g.slime_paste_file = "/home/abanman/.slime_paste"
+  vim.g.slime_target = "tmux"
+  vim.g.slime_default_config = { socket_name = "default", taget_pane = "{last}" }
 
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'release'} -- reqs: node, yarn
