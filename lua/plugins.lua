@@ -23,9 +23,9 @@ return require('packer').startup(function()
 
   -- REPL
   use 'jpalardy/vim-slime'
-  vim.g.slime_paste_file = "/home/abanman/.slime_paste"
+  vim.cmd([[let g:slime_paste_file = expand("$HOME/.slime_paste")]])
   vim.g.slime_target = "tmux"
-  vim.g.slime_default_config = { socket_name = "default", taget_pane = "{last}" }
+  vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
 
   -- Code completion
   use {'neoclide/coc.nvim', branch = 'release'} -- reqs: node, yarn
